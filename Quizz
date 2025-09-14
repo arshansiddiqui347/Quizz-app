@@ -1,0 +1,42 @@
+# Simple Quiz Application in Python
+
+def run_quiz():
+    questions = [
+        {
+            "question": "What does CPU stand for?",
+            "options": ["A) Central Processing Unit", "B) Computer Personal Unit", "C) Central Processor Unlock"],
+            "answer": "A"
+        },
+        {
+            "question": "Which language is known as the backbone of the Web?",
+            "options": ["A) Python", "B) JavaScript", "C) HTML"],
+            "answer": "B"
+        },
+        {
+            "question": "What is the output of 2**3 in Python?",
+            "options": ["A) 6", "B) 8", "C) 9"],
+            "answer": "B"
+        }
+    ]
+
+    score = 0
+    print("\n--- Welcome to the Computer Science Quiz! ---\n")
+    print("Instructions: Enter the letter (A, B, C) of your answer.\n")
+
+    for i, q in enumerate(questions, 1):
+        print(f"Question {i}: {q['question']}")
+        for option in q['options']:
+            print(option)
+        
+        user_answer = input("\nYour answer: ").strip().upper()
+        if user_answer == q['answer']:
+            print("✅ Correct!\n")
+            score += 1
+        else:
+            print(f"❌ Incorrect! The correct answer was {q['answer']}.\n")
+
+    print("--- Quiz Finished! ---")
+    print(f"Your final score: {score}/{len(questions)}")
+
+if __name__ == "__main__":
+    run_quiz()
